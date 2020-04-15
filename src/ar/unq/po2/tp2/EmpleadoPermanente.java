@@ -46,6 +46,14 @@ public class EmpleadoPermanente extends Empleado {
 		return 50f * this.getAntiguedad();
 	}
 	
+	public Float getRetencionObraSocial() {
+		return this.getPorcentajeObraSocial() * this.calcularSueldoBruto();
+	}
+	
+	public Float getRetencionJubilacion() {
+		return this.getPorcentajeJubilacion() * this.calcularSueldoBruto();
+	}
+	
 	public Float getRetencionHijos() {
 		return 20f * this.getCantidadHijos();
 	}
@@ -76,12 +84,10 @@ public class EmpleadoPermanente extends Empleado {
 		return String.join("\n", conceptos);
 	}
 
-	@Override
 	public Float getPorcentajeJubilacion() {
 		return 0.15f;
 	}
 
-	@Override
 	public Float getPorcentajeObraSocial() {
 		return 0.10f;
 	}

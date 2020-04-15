@@ -10,11 +10,10 @@ import org.junit.jupiter.api.Test;
 
 public class EmpresaTest {
 	
-	ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+	Empresa empresa;
 	
 	@BeforeEach
     void beforeEach() {
-        this.empleados.clear();
         Empleado empleadoTemporarioCasado = new EmpleadoTemporario(
 				"Luke Skywalker", 
 				"Evergreen 3333", 
@@ -42,49 +41,56 @@ public class EmpresaTest {
 				0,
 				1
 		);
-		this.empleados = new ArrayList<Empleado>();
-		this.empleados.add(empleadoTemporarioCasado);
-		this.empleados.add(empleadoPermanenteCasadoConHijos);
-		this.empleados.add(empleadoPermanenteSolteroSinHijos);
+		Empleado empleadoContratadoCasado = new EmpleadoContratado(
+				"Walter White", 
+				"Evergreen 1111", 
+				"CASADO", 
+				LocalDate.parse("1980-01-01"),
+				1000.0f,
+				1234556,
+				"TRANSFERENCIA"
+		);	
+		ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+		empleados.add(empleadoTemporarioCasado);
+		empleados.add(empleadoPermanenteCasadoConHijos);
+		empleados.add(empleadoPermanenteSolteroSinHijos);
+		empleados.add(empleadoContratadoCasado);
+		
+		this.empresa = new Empresa(9876542, "AntsyCoder SA", empleados);
     }
 
-//	@Test
-//	public void test() {	
-//		for (ReciboHaberes recibo : empresa.liquidarSueldos()) {
-//			System.out.println(recibo.getNombreEmpleado());
-//			System.out.println(recibo.getConceptos() + "\n");
-//		}
-//	}
+	@Test
+	public void test() {	
+		for (ReciboHaberes recibo : this.empresa.liquidarSueldos()) {
+			System.out.println(recibo.getNombreEmpleado());
+			System.out.println(recibo.getConceptos() + "\n");
+		}
+	}
 	
 	@Test
 	void testGetters() {
-		Empresa empresa = new Empresa(9876542, "AntsyCoder SA", this.empleados);
-		assertEquals(9876542, empresa.getCuit());
-		assertEquals("AntsyCoder SA", empresa.getNombre());
+		assertEquals(9876542, this.empresa.getCuit());
+		assertEquals("AntsyCoder SA", this.empresa.getNombre());
 	}
 	
 	@Test
 	void testCalcularSueldoBruto() {
-		Empresa empresa = new Empresa(9876542, "AntsyCoder SA", this.empleados);	
-		assertEquals(4100.0f, empresa.totalSueldosBruto());		
+		assertEquals(5100.0f, this.empresa.totalSueldosBruto());		
 	}
 	
 	@Test
 	void testCalcularRetenciones() {
-		Empresa empresa = new Empresa(9876542, "AntsyCoder SA", this.empleados);	
-		assertEquals(1170.0f, empresa.totalRetenciones());
+		assertEquals(1220.0f, this.empresa.totalRetenciones());
 	}
 	
 	@Test
 	void testCalcularSueldoNeto() {
-		Empresa empresa = new Empresa(9876542, "AntsyCoder SA", this.empleados);	
-		assertEquals(2930.0f, empresa.totalSueldosNeto());	
+		assertEquals(3880.0f, this.empresa.totalSueldosNeto());	
 	}
 	
 	@Test
 	void testLiquidarSueldos() {
-		Empresa empresa = new Empresa(9876542, "AntsyCoder SA", this.empleados);	
-		assertEquals(3, empresa.liquidarSueldos().size());	
+		assertEquals(4, this.empresa.liquidarSueldos().size());	
 	}
 
 }

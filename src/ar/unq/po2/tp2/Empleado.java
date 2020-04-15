@@ -67,14 +67,6 @@ public abstract class Empleado {
 		return "CASADO".equalsIgnoreCase(this.getEstadoCivil());
 	}
 	
-	public Float getRetencionObraSocial() {
-		return this.getPorcentajeObraSocial() * this.calcularSueldoBruto();
-	}
-	
-	public Float getRetencionJubilacion() {
-		return this.getPorcentajeJubilacion() * this.calcularSueldoBruto();
-	}
-	
 	public Float calcularSueldoNeto() {
 		return this.calcularSueldoBruto() - this.calcularRetenciones();
 	}
@@ -84,9 +76,5 @@ public abstract class Empleado {
 	public abstract Float calcularRetenciones();
 	
 	public abstract String getConceptos();
-	
-	public abstract Float getPorcentajeJubilacion();
-
-	public abstract Float getPorcentajeObraSocial();
 	
 }

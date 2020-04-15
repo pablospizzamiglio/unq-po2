@@ -30,6 +30,14 @@ public class EmpleadoTemporario extends Empleado {
 		this.cantidadHorasExtra = cantidadHorasExtra;
 	}
 	
+	public Float getRetencionObraSocial() {
+		return this.getPorcentajeObraSocial() * this.calcularSueldoBruto();
+	}
+	
+	public Float getRetencionJubilacion() {
+		return this.getPorcentajeJubilacion() * this.calcularSueldoBruto();
+	}
+	
 	public Float getRetencionHoraExtra() {
 		return 5f * this.getCantidadHorasExtra();
 	}
@@ -67,12 +75,10 @@ public class EmpleadoTemporario extends Empleado {
 		return String.join("\n", conceptos);
 	}
 	
-	@Override
 	public Float getPorcentajeJubilacion() {
 		return 0.10f;
 	}
 
-	@Override
 	public Float getPorcentajeObraSocial() {
 		return 0.10f;
 	}
