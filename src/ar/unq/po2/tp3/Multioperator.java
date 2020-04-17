@@ -40,7 +40,6 @@ public class Multioperator {
 		this.numbers = numbers;
 	}
 	
-
 	/**
 	 * Adds an element {@code n} to the collection {@code numbers}
 	 * 

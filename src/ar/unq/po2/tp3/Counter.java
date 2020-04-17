@@ -79,4 +79,5 @@ public class Counter {
 		}
 		return numberOfMultiples;
 	}
+	
 }
