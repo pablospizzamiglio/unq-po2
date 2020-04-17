@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class TestEmpleadoTemporario {
+public class EmpleadoTemporarioTest {
 	
 	EmpleadoTemporario empleadoMenor50Casado;
 	EmpleadoTemporario empleadoMayor50Soltero;
