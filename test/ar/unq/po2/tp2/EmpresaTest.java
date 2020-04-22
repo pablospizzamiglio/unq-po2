@@ -49,19 +49,18 @@ public class EmpresaTest {
 				1000.0f,
 				1234556,
 				"TRANSFERENCIA"
-		);	
-		ArrayList<Empleado> empleados = new ArrayList<Empleado>();
-		empleados.add(empleadoTemporarioCasado);
-		empleados.add(empleadoPermanenteCasadoConHijos);
-		empleados.add(empleadoPermanenteSolteroSinHijos);
-		empleados.add(empleadoContratadoCasado);
+		);
+		this.empresa = new Empresa(9876542, "AntsyCoder SA");
+		this.empresa.addEmpleado(empleadoTemporarioCasado);
+		this.empresa.addEmpleado(empleadoPermanenteCasadoConHijos);
+		this.empresa.addEmpleado(empleadoPermanenteSolteroSinHijos);
+		this.empresa.addEmpleado(empleadoContratadoCasado);
 		
-		this.empresa = new Empresa(9876542, "AntsyCoder SA", empleados);
     }
 
 	@Test
 	public void test() {	
-		for (ReciboHaberes recibo : this.empresa.liquidarSueldos()) {
+		for (ReciboHaber recibo : this.empresa.liquidarSueldos()) {
 			System.out.println(recibo.getNombreEmpleado());
 			System.out.println(recibo.getConceptos() + "\n");
 		}

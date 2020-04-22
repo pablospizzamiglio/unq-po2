@@ -48,7 +48,7 @@ public class EmpleadoContratado extends Empleado {
 	public String getConceptos() {
 		ArrayList<String> conceptos = new ArrayList<String>();
 		conceptos.add(String.format("Sueldo Básico $ %.2f", this.getSueldoBasico()));
-		conceptos.add(String.format("Retención por Cargos Administrativos($ %.2f)", this.getRetencionCargosAdministrativos()));
+		conceptos.add(String.format("Retención por Cargos Administrativos ($ %.2f)", this.getRetencionCargosAdministrativos()));
 		conceptos.add(String.format("Total Bruto $ %.2f", this.calcularSueldoBruto()));
 		conceptos.add(String.format("Total Retenido ($ %.2f)", this.calcularRetenciones()));
 		conceptos.add(String.format("Total Neto $ %.2f", this.calcularSueldoNeto()));

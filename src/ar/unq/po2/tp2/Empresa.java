@@ -7,13 +7,13 @@ public class Empresa {
 	
 	private int cuit;
 	private String nombre;
-	private ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+	private ArrayList<Empleado> empleados;
 
 	
-	public Empresa(int cuit, String nombre, ArrayList<Empleado> empleados) {
+	public Empresa(int cuit, String nombre) {
 		this.setCuit(cuit);
 		this.setNombre(nombre);
-		this.setEmpleados(empleados);
+		this.setEmpleados(new ArrayList<Empleado>());
 	}
 
 	public int getCuit() {
@@ -32,12 +32,16 @@ public class Empresa {
 		this.nombre = nombre;
 	}
 	
-	public ArrayList<Empleado> getEmpleados() {
+	private ArrayList<Empleado> getEmpleados() {
 		return empleados;
 	}
 
-	public void setEmpleados(ArrayList<Empleado> empleados) {
+	private void setEmpleados(ArrayList<Empleado> empleados) {
 		this.empleados = empleados;
+	}
+	
+	public void addEmpleado(Empleado empleado) {
+		this.getEmpleados().add(empleado);
 	}
 	
 	public float totalSueldosNeto() {
@@ -60,17 +64,10 @@ public class Empresa {
 		return totalRetenciones;
 	}
 	
-	public ArrayList<ReciboHaberes> liquidarSueldos() {
-		ArrayList<ReciboHaberes> recibos = new ArrayList<ReciboHaberes>();
+	public ArrayList<ReciboHaber> liquidarSueldos() {
+		ArrayList<ReciboHaber> recibos = new ArrayList<ReciboHaber>();
 		for (Empleado empleado : this.getEmpleados()) {
-			recibos.add(new ReciboHaberes(
-					empleado.getNombre(),
-					empleado.getDireccion(),
-					empleado.calcularSueldoBruto(),
-					empleado.calcularSueldoNeto(),
-					empleado.getConceptos(),
-					LocalDate.now()
-			));
+			recibos.add(new ReciboHaber(empleado, LocalDate.now()));
 		}
 		return recibos;
 	}

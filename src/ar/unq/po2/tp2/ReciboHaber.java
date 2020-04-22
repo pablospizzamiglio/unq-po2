@@ -2,7 +2,7 @@ package ar.unq.po2.tp2;
 
 import java.time.LocalDate;
 
-public class ReciboHaberes {
+public class ReciboHaber {
 	
 	private String nombreEmpleado;
 	private String direccion;
@@ -11,12 +11,12 @@ public class ReciboHaberes {
 	private String conceptos;
 	private LocalDate fechaEmision;
 	
-	public ReciboHaberes(String nombreEmpleado, String direccion, Float sueldoBruto, Float sueldoNeto, String conceptos, LocalDate fechaEmision) {
-		this.setNombreEmpleado(nombreEmpleado);
-		this.setDireccion(direccion);
-		this.setSueldoBruto(sueldoBruto);
-		this.setSueldoNeto(sueldoNeto);
-		this.setConceptos(conceptos);
+	public ReciboHaber(Empleado empleado, LocalDate fechaEmision) {
+		this.setNombreEmpleado(empleado.getNombre());
+		this.setDireccion(empleado.getDireccion());
+		this.setSueldoBruto(empleado.calcularSueldoBruto());
+		this.setSueldoNeto(empleado.calcularSueldoNeto());
+		this.setConceptos(empleado.getConceptos());
 		this.setFechaEmision(fechaEmision);
 	}
 
