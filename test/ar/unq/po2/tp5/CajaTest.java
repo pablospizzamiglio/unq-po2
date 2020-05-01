@@ -10,11 +10,16 @@ class CajaTest {
 	Caja caja;
 	Producto queso;
 	Producto jamon;
+	Factura edesur;
+	Factura abl;
 
 	@BeforeEach
 	void setUp() throws Exception {
 		this.queso = new ProductoCooperativa("Queso", 100.0f);
 		this.jamon = new Producto("Jamon",  110.0f);
+		
+		this.edesur = new FacturaServicio(0.5f, 1000);
+		this.abl = new FacturaImpuesto(650.0f);
 		
 		Inventario inventario = new Inventario();
 		inventario.incrementarCantidad(queso);
@@ -29,32 +34,26 @@ class CajaTest {
 	}
 
 	@Test
-	void testCalcularMonto() {		
+	void testTotalAPagarProductos() {		
 		this.caja.registrar(queso);
 		this.caja.registrar(jamon);
-		assertEquals(200.0f, caja.calcularMontoTotal());
+		assertEquals(200.0f, caja.getTotalAPagar());
 	}
 	
 	@Test
-	void testCalcularMontoProductoNoDisponible() {	
+	void testTotalAPagarProductoNoDisponible() {	
 		this.caja.registrar(queso);
 		this.caja.registrar(jamon);
 		Producto zapato = new Producto("Zapato", 400.0f);
 		this.caja.registrar(zapato);
-		assertEquals(200.0f, caja.calcularMontoTotal());
+		assertEquals(200.0f, caja.getTotalAPagar());
 	}
 	
 	@Test
-	void testAnularRegistro() {		
-		this.caja.registrar(queso);
-		this.caja.registrar(jamon);
-		assertEquals(200.0f, caja.calcularMontoTotal());
-		this.caja.anular(jamon);
-		assertEquals(90.0f, caja.calcularMontoTotal());
-		this.caja.anular(queso);
-		assertEquals(0.0f, caja.calcularMontoTotal());
-		this.caja.anular(queso);
-		assertEquals(0.0f, caja.calcularMontoTotal());
+	void testTotalAPagarFacturas() {		
+		this.caja.registrarPago(edesur);
+		this.caja.registrarPago(abl);
+		assertEquals(1150.0f, caja.getTotalAPagar());
 	}
-
+	
 }
