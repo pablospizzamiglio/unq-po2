@@ -28,8 +28,6 @@ class ProductoTest {
 		assertEquals(1, this.producto.getCantidad());
 		this.producto.decrementarCantidad();
 		assertEquals(0, this.producto.getCantidad());
-		this.producto.decrementarCantidad();
-		assertEquals(0, this.producto.getCantidad());
 	}
 	
 	@Test

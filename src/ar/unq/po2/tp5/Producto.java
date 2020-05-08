@@ -1,6 +1,6 @@
 package ar.unq.po2.tp5;
 
-public class Producto {
+public class Producto implements Pagable {
 	
 	private String nombre;
 	private Integer cantidad;
@@ -45,10 +45,19 @@ public class Producto {
 	}
 	
 	public void decrementarCantidad() {
-		if (this.getCantidad() > 0) {
-			this.setCantidad(this.getCantidad() - 1);
+		this.setCantidad(this.getCantidad() - 1);
+	}
+	
+	public boolean hayDisponibilidad() {
+		return this.getCantidad() > 1;
+	}
+	
+	@Override
+	public void registrarEnCaja(Caja caja) {	
+		if (this.hayDisponibilidad()) {
+			caja.incrementarTotalAPagar(this.getPrecio());
 		} else {
-			System.out.println("Cantidad insuficiente de " + this.getNombre());
+			System.out.println("El producto solicitado no está disponible");
 		}
 	}
 

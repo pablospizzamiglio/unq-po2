@@ -1,43 +1,41 @@
 package ar.unq.po2.tp5;
 
-public class Caja implements Agencia {
+public class Caja {
 	
-	private Inventario inventario;
+	private Agencia agencia;
 	private Float totalAPagar;
 
-	public Caja(Inventario inventario) {
-		this.setInventario(inventario);
+	public Caja(Agencia agencia) {
+		this.setAgencia(agencia);
 		this.setTotalAPagar(0.0f);
 	}
 
-	private Inventario getInventario() {
-		return inventario;
+	public Agencia getAgencia() {
+		return agencia;
 	}
 
-	private void setInventario(Inventario inventario) {
-		this.inventario = inventario;
+	private void setAgencia(Agencia agencia) {
+		this.agencia = agencia;
 	}
-	
+
 	public Float getTotalAPagar() {
 		return totalAPagar;
 	}
 
-	public void setTotalAPagar(Float totalAPagar) {
+	private void setTotalAPagar(Float totalAPagar) {
 		this.totalAPagar = totalAPagar;
 	}
 	
-	public void registrar(Producto producto) {
-		if (this.getInventario().hayDisponibilidad(producto)) {
-			this.setTotalAPagar(this.getTotalAPagar() + producto.getPrecio());
-			this.getInventario().decrementarCantidad(producto);
-		} else {
-			System.out.println("El producto solicitado no está disponible");
-		}
+	public void incrementarTotalAPagar(Float monto) {
+		this.setTotalAPagar(this.getTotalAPagar() + monto);
 	}
-
-	@Override
-	public void registrarPago(Factura factura) {
-		this.setTotalAPagar(this.getTotalAPagar() + factura.getMonto());
+	
+	public void registrar(Pagable pagable) {
+		pagable.registrarEnCaja(this);
+	}
+	
+	public void notificarAgencia(Factura factura) {
+		this.getAgencia().registrarPago(factura);
 	}
 
 }

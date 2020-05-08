@@ -1,6 +1,6 @@
 package ar.unq.po2.tp5;
 
-public class FacturaImpuesto implements Factura {
+public class FacturaImpuesto extends Factura {
 	
 	private Float tasaDeServicio;
 

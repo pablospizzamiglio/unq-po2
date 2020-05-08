@@ -1,6 +1,6 @@
 package ar.unq.po2.tp5;
 
-public class FacturaServicio implements Factura {
+public class FacturaServicio extends Factura {
 	
 	private Float costoUnidadConsumida;
 	private Integer unidadesConsumidas;
