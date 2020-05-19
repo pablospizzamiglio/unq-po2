@@ -1,18 +1,18 @@
-package ar.unq.po2.tp05.mercado;
+package ar.unq.po2.tp04.v.mercado;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.unq.po2.tp05.mercado.Agencia;
-import ar.unq.po2.tp05.mercado.AgenciaRecaudadora;
-import ar.unq.po2.tp05.mercado.Caja;
-import ar.unq.po2.tp05.mercado.Factura;
-import ar.unq.po2.tp05.mercado.FacturaImpuesto;
-import ar.unq.po2.tp05.mercado.FacturaServicio;
-import ar.unq.po2.tp05.mercado.Producto;
-import ar.unq.po2.tp05.mercado.ProductoCooperativa;
+import ar.unq.po2.tp04.v.mercado.Agencia;
+import ar.unq.po2.tp04.v.mercado.AgenciaRecaudadora;
+import ar.unq.po2.tp04.v.mercado.Caja;
+import ar.unq.po2.tp04.v.mercado.Factura;
+import ar.unq.po2.tp04.v.mercado.FacturaImpuesto;
+import ar.unq.po2.tp04.v.mercado.FacturaServicio;
+import ar.unq.po2.tp04.v.mercado.Producto;
+import ar.unq.po2.tp04.v.mercado.ProductoCooperativa;
 
 class CajaTest {
 	
