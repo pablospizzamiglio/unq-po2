@@ -8,8 +8,6 @@ import java.time.LocalDate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.unq.po2.tp02.EmpleadoTemporario;
-
 public class EmpleadoTemporarioTest {
 	
 	EmpleadoTemporario empleadoMenor50Casado;

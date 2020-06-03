@@ -3,17 +3,9 @@ package ar.unq.po2.tp02;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import ar.unq.po2.tp02.Empleado;
-import ar.unq.po2.tp02.EmpleadoContratado;
-import ar.unq.po2.tp02.EmpleadoPermanente;
-import ar.unq.po2.tp02.EmpleadoTemporario;
-import ar.unq.po2.tp02.Empresa;
-import ar.unq.po2.tp02.ReciboHaber;
 
 public class EmpresaTest {
 	

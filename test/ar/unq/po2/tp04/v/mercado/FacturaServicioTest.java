@@ -5,11 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.unq.po2.tp04.v.mercado.AgenciaRecaudadora;
-import ar.unq.po2.tp04.v.mercado.Caja;
-import ar.unq.po2.tp04.v.mercado.Factura;
-import ar.unq.po2.tp04.v.mercado.FacturaServicio;
-
 class FacturaServicioTest {
 	
 	Factura factura;
