@@ -64,7 +64,7 @@ Roles:
 - Operación primitiva abstracta: `CuentaBancaria::puedeExtraer`
 - Clases concretas:
   - `CuentaCorriente`
-  - `CajaDeAhorror`
+  - `CajaDeAhorro`
 - Operación primitiva concreta:
   - `CuentaCorriente::puedeExtraer`
   - `CajaDeAhorro::puedeExtraer`
