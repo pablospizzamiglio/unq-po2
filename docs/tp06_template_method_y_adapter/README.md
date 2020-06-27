@@ -65,6 +65,6 @@ Roles:
 - Clases concretas:
   - `CuentaCorriente`
   - `CajaDeAhorro`
-- Operación primitiva concreta:
+- Operaciones primitivas concretas:
   - `CuentaCorriente::puedeExtraer`
   - `CajaDeAhorro::puedeExtraer`
