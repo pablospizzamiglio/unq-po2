@@ -27,7 +27,7 @@
 
   - Un _Dummy Object_ es un objeto que se pasa al SUT como argumento (o como atributo de un argumento) en lugar de otro pero que nunca será utilizado. Como particularidad no precisan ser instalados ni configurados previo uso y de ellos solo se espera que existan.
 
-    - El siguiente ejemplo demuestra que mientras no se le asigne ningún comportamiento a la instancia creada con Mockito, ésta continuará siendo un objeto _dummy_.
+    - El siguiente ejemplo demuestra cómo utilizar un Dummy Object:
 
     ```java
     // Instanciación del objeto `dummy` con Mockito
@@ -105,6 +105,12 @@
   - Un _Fake Object_ es un objeto que reemplaza la funcionalidad del DOC real con una implementación alternativa de la misma funcionalidad o un subconjunto de ella. A diferencia de un Test Stub o un Mock Object no es controlado ni observado por test. Una de las razones más comunes para su utilización es cuando el DOC real todavía no fue creado.
 
     - Un ejemplo común para el uso de un Fake Object es la implementación de una falsa base de datos (en memoria o archivo).
+
+## Glosario
+
+- Depended-on component (_DOC_): Una clase individual o un gran componente en el cual el SUT depende. El DOC es de principal interes durante el test debido a que se puede observar y/o controlar sus interacciones con el SUT para conseguir una mayor cobertura.
+
+- System Under Test (_SUT_): Lo que sea que se esté testeando. El SUT siempre está definido desde la perspectiva del test. Cuando se escriben tests unitarios, el SUT es la clase, objeto o método que se está evaluando.
 
 ## Bibliografía
 
