@@ -6,7 +6,7 @@
 - [x] TP04 - POO Java
 - [ ] TP04 - Clases Abstractas e Interfaces (_incompleto_)
 - [ ] TP05 - SOLID (_incompleto_)
-- [ ] [TP06 - Template Method y Adapter](docs/tp06_template_method_y_adapter/README.md)
+- [x] [TP06 - Template Method y Adapter](docs/tp06_template_method_y_adapter/README.md)
 - [ ] TP07 - Test y Test Doubles
 - [ ] TP08 - Composite
 - [ ] TP08 - Observer
