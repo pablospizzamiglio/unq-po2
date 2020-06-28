@@ -20,25 +20,68 @@
 
 - Escenarios:
 
-  1. _Cuatro cartas iguales, una diferente_\
-     **Dado** una jugada de 5 cartas\
+  1. _Cuatro cartas mismo valor, una diferente_\
+     **Dado** una mano de 5 cartas\
      **Cuando** 4 cartas son de igual valor\
      **Y** 1 es diferente\
-     **Entonces** la jugada es identificada como _poker_\
+     **Entonces** la mano es identificada como _poker_\
      **Y** `PokerStatus::verificar` retorna `true`
 
   2. _Todas cartas diferentes_\
-     **Dado** una jugada de 5 cartas\
+     **Dado** una mano de 5 cartas\
      **Cuando** todas las cartas son de diferente valor\
-     **Entonces** la jugada no es identificada como _poker_\
+     **Entonces** la mano no es identificada como _poker_\
      **Y** `PokerStatus::verificar` retorna `false`
 
-  3. _Tres cartas iguales, dos diferentes_\
-     **Dado** una jugada de 5 cartas\
-     **Cuando** 3 cartas son iguales\
+  3. _Tres cartas de igual valor, dos diferentes_\
+     **Dado** una mano de 5 cartas\
+     **Cuando** 3 cartas son de igual valor\
      **Y** 2 son diferentes\
-     **Entonces** la jugada no es identificada como _poker_\
+     **Entonces** la mano no es identificada como _poker_\
      **Y** `PokerStatus::verificar` retorna `false`
+
+## 3. Póquer Continuación
+
+- Escenarios Poker:
+
+  1. _Cuatro cartas mismo valor, una diferente_\
+     **Dado** una mano de 5 cartas\
+     **Cuando** 4 cartas son de igual valor\
+     **Y** 1 es diferente\
+     **Entonces** la mano es identificada como _poker_\
+     **Y** `PokerStatus::verificar` retorna `Poker`
+
+- Escenarios Color:
+
+  1. _Todas las cartas del mismo palo_\
+     **Dado** una mano de 5 cartas\
+     **Cuando** 5 cartas son del mismo palo\
+     **Entonces** la mano es identificada como _color_\
+     **Y** `PokerStatus::verificar` retorna `Color`
+
+- Escenarios Trío:
+
+  1. _Tres cartas del mismo valor, dos diferentes_\
+     **Dado** una mano de 5 cartas\
+     **Cuando** 3 cartas tienen el mismo valor\
+     **Entonces** la mano es identificada como _trío_\
+     **Y** `PokerStatus::verificar` retorna `Trío`
+
+- Escenario Vacío
+
+  1. _Todas cartas diferentes en valor y palo_\
+     **Dado** una mano de 5 cartas\
+     **Cuando** todas las cartas son de diferente palo\
+     **Entonces** la mano no es identificada como _color_\
+     **Y** `PokerStatus::verificar` retorna un `String` vacío
+
+  1. _Dos cartas del mismo valor, otras dos cartas del mismo valor, una diferente_\
+     **Dado** una mano de 5 cartas\
+     **Cuando** 2 cartas tienen el mismo valor\
+     **Y** otras 2 cartas tienen el mismo valor pero diferente al primer grupo\
+     **Y** 1 última carta tiene un valor diferente a los dos grupos anteriores\
+     **Entonces** la mano no es identificada como una jugada\
+     **Y** `PokerStatus::verificar` retorna un `String` vacío
 
 ## 7. Test Doubles
 
