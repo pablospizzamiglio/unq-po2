@@ -83,6 +83,77 @@
      **Entonces** la mano no es identificada como una jugada\
      **Y** `PokerStatus::verificar` retorna un `String` vacío
 
+## 4. Cartas de Póquer
+
+Ver implementación en Java
+
+## 5. Mockito
+
+- Ver implementación en Java
+
+- ¿Cómo se indica en mockito que el objeto mock debe recibir un secuencia de mensajes particular en un orden preestablecido?
+
+  - Se puede lograr mediante el uso de la clase `InOrder` de la siguiente manera:
+
+  ```java
+  // Inicializa el test double
+  List unMock = mock(List.class);
+
+  unMock.add("Se agregó primero");
+  unMock.add("Se agregó segundo");
+
+  // Crea un verificador InOrder para nuestro mock
+  InOrder inOrder = inOrder(unMock);
+
+  // Verifica que unMock.add fue llamado primero con el argumento "Se agregó primero" y luego con "Se agregó Segundo"
+  inOrder.verify(unMock).add("Se agregó primero");
+  inOrder.verify(unMock).add("Se agregó segundo");
+  ```
+
+- ¿Cómo hacer para que un objeto mock este preparado para recibir algunos mensajes sin importar el orden o la obligatoriedad de recibirlos?
+
+  - Se puede lograr mediante la combinación encadenada de `when` y `thenReturn` de la siguiente manera:
+
+  ```java
+  // Inicializa el test double
+  List unMock = mock(List.class);
+
+  // Prepara el test double para que cuando reciba el mensaje `get`, éste se comporte de la manera especificada
+  // Cuando reciba el mensaje `get(0)` retornará "Primero"
+  when(unMock.get(0)).thenReturn("Primero");
+  // Cuando reciba el mensaje `size()` retornará 50
+  when(unMock.size()).thenReturn(50);
+  ```
+
+- ¿Es posible anidar envío de mensajes con mockito? Si es posible, ¿cómo se hace?
+
+  - El anidamiento de mensajes puede lograrse mediate el uso del enumerativo `Mockito.RETURNS_DEEP_STUBS` al momento de configuración del mock de la siguiente manera:
+
+  ```java
+  // Inicializa el mock
+  ClaseAsombrosa unMock = Mockito.mock(ClaseAsombrosa.class, Mockito.RETURNS_DEEP_STUBS);
+
+  // Prepara el test double para una cadena de llamados anidada
+  when(unMock.metodoUno().metodoDos().metodoTres()).thenReturn("Valor anidado");
+  ```
+
+- ¿Como es la forma de verificación con mockito?
+
+  - Se puede lograr mediante el uso de `verify` de la siguiente manera:
+
+  ```java
+  // Inicializa el test double
+  List unMock = mock(List.class);
+
+  // Se hace uso del test double
+  unMock.add("Primero");
+  unMock.clear();
+
+  // Verifica que se le hayan enviado los mensajes `add("Primero")` y `clear()`
+  verify(unMock).add("Primero");
+  verify(unMock).clear();
+  ```
+
 ## 7. Test Doubles
 
 - ¿Qué son los test doubles?
@@ -183,3 +254,7 @@
 
 - Lasse Koskela. _Effective Unit Testing_. Manning, 2013.
 - Gerard Meszaros. _xUnit Test Patterns: Refactoring Test Code_. Addison-Wesley Professional, 2007.
+
+## Links
+
+- [Mockito](https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/Mockito.html)
