@@ -40,7 +40,7 @@
     assertEquals(1, impresora.size());
     ```
 
-  - Un _Test Stub_ es un objeto que actúa como un punto de control para brindarle las entradas indirectas al SUT cuando los métodos del Test Stub son invocados. Su uso nos permite ejecutar ramas sin evaluar que de otra forma serían imposibles de alcanzar durante un test. Un _Responder_ es un Test Stub básico que se usa para inyectarle al SUT entradas indirectas válidas e inválidas a través de las invocaciones normales de sus métodos. Un _Saboteur_ es un caso especial de Test Stub que lanza excepciones o errores para inyectarle entradas indirectas anormales al SUT.
+  - Un _Test Stub_ es un objeto que actúa como un punto de control para brindarle las entradas indirectas al SUT cuando los métodos del Test Stub son invocados. Su uso nos permite ejecutar ramas del código sin evaluar que de otra forma serían imposibles de alcanzar durante un test. Un _Responder_ es un Test Stub básico que se usa para inyectarle al SUT entradas indirectas válidas e inválidas a través de las invocaciones normales de sus métodos. Un _Saboteur_ es un caso especial de Test Stub que lanza excepciones o errores para inyectarle entradas indirectas anormales al SUT.
 
     - El siguiente ejemplo demuestra cómo un Test Stub puede afectar el comportamiento del SUT al momento de ejecución del test:
 
@@ -66,7 +66,7 @@
     - El siguiente ejemplo demuestra cómo pueden verificarse las salidas indirectas del SUT mediante el uso de Mockito:
 
     ```java
-    // Instanciación del objecto Documento y transformado en un `spy` por Mockito
+    // Instanciación del objecto Documento y transformamción en `spy` por Mockito
     Documento spyDocumento = spy(Documento("Contenido del documento"));
     Impresora impresora = new Impresora();
 
@@ -78,7 +78,7 @@
     verify(spyDocumento).getContenido();
     ```
 
-  - Un _Mock Object_ también es un objeto que actúa como punto de observación de las salidas indirectas del SUT. Como un Test Stub, puede necesitar retornar información como respuesta al llamado de sus métodos. Y como un Test Spy, presta atención a cómo es llamado por el SUT, diferenciándose de éste en que el Mock Object compara las llamadas reales recibidas con las esperadas previamente definidas usando aseveraciones y hace falla la prueba si se presenta una diferencia.
+  - Un _Mock Object_ es un objeto que también puede actuar como punto de observación de las salidas indirectas del SUT. Al igual que un Test Stub, puede necesitar retornar información como respuesta al llamado de sus métodos (respuestas pre-programadas). Y al igual que un Test Spy, registra todas las llamadas hechas a sus métodos por el SUT para luego verificarse.
 
     - El siguiente ejemplo demuestra cómo pueden alterarse las entradas indirectas y verificarse las salidas indirectas del SUT mediante el uso de Mockito:
 
