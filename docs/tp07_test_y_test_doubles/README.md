@@ -16,6 +16,30 @@
   - A través de la utilización de nombres legibles y descriptibles facilita el mantenimiento y el entendimiento de los mismos
   - Ayuda a documentar el comportamiento del SUT
 
+## 2. Póquer
+
+- Escenarios:
+
+  1. _Cuatro cartas iguales, una diferente_\
+     **Dado** una jugada de 5 cartas\
+     **Cuando** 4 cartas son de igual valor\
+     **Y** 1 es diferente\
+     **Entonces** la jugada es identificada como _poker_\
+     **Y** `PokerStatus::verificar` retorna `true`
+
+  2. _Todas cartas diferentes_\
+     **Dado** una jugada de 5 cartas\
+     **Cuando** todas las cartas son de diferente valor\
+     **Entonces** la jugada no es identificada como _poker_\
+     **Y** `PokerStatus::verificar` retorna `false`
+
+  3. _Tres cartas iguales, dos diferentes_\
+     **Dado** una jugada de 5 cartas\
+     **Cuando** 3 cartas son iguales\
+     **Y** 2 son diferentes\
+     **Entonces** la jugada no es identificada como _poker_\
+     **Y** `PokerStatus::verificar` retorna `false`
+
 ## 7. Test Doubles
 
 - ¿Qué son los test doubles?
