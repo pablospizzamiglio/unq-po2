@@ -154,6 +154,85 @@ Ver implementación en Java
   verify(unMock).clear();
   ```
 
+## 6. Jugadas de Póquer
+
+- Escenarios:
+
+  1. _Poker gana a Color_
+     **Dado** dos manos de 5 cartas\
+     **Cuando** 1 mano es _poker_\
+     **Y** la otra es _color_\
+     **Entonces** la mano identificada como _poker_ gana
+
+  2. _Poker gana a Trío_
+     **Dado** dos manos de 5 cartas\
+     **Cuando** 1 mano es _poker_\
+     **Y** la otra es _trío_\
+     **Entonces** la mano identificada como _poker_ gana
+
+  3. _Poker con cartas de mayor valor gana a Poker con cartas de menor valor_
+     **Dado** dos manos de 5 cartas\
+     **Cuando** 1 mano es _poker_\
+     **Y** la otra es _poker_\
+     **Entonces** la mano identificada como _poker_ con cartas de mayor valor gana
+
+  4. _Poker empate_
+     **Dado** dos manos de 5 cartas\
+     **Cuando** 1 mano es _poker_\
+     **Y** la otra es _poker_\
+     **Y** son de igual valor\
+     **Entonces** no hay ganador
+
+  5. _Color pierde contra Poker_
+     **Dado** dos manos de 5 cartas\
+     **Cuando** 1 mano es _color_\
+     **Y** la otra es _poker_\
+     **Entonces** la mano identificada como _color_ pierde
+
+  6. _Color le gana a Trío_
+     **Dado** dos manos de 5 cartas\
+     **Cuando** 1 mano es _color_\
+     **Y** la otra es _trío_\
+     **Entonces** la mano identificada como _color_ gana
+
+  7. _Color con cartas de mayor valor le gana a Color con cartas de menor valor_
+     **Dado** dos manos de 5 cartas\
+     **Cuando** 1 mano es _color_\
+     **Y** la otra es _color_\
+     **Entonces** la mano identificada como _color_ con cartas de mayor valor gana
+
+  8. _Color empate_
+     **Dado** dos manos de 5 cartas\
+     **Cuando** 1 mano es _color_\
+     **Y** la otra es _color_\
+     **Y** son de igual valor\
+     **Entonces** no hay ganador
+
+  9. _Trío pierde contra Poker_
+     **Dado** dos manos de 5 cartas\
+     **Cuando** 1 mano es _trío_\
+     **Y** la otra es _poker_\
+     **Entonces** la mano identificada como _trío_ pierde
+
+  10. _Trío pierde contra Color_
+      **Dado** dos manos de 5 cartas\
+      **Cuando** 1 mano es _trío_\
+      **Y** la otra es _color_\
+      **Entonces** la mano identificada como _trío_ pierde
+
+  11. _Trío con cartas de mayor valor le gana a Trío con cartas de menor valor_
+      **Dado** dos manos de 5 cartas\
+      **Cuando** 1 mano es _trío_\
+      **Y** la otra es _trío_\
+      **Entonces** la mano identificada como _trío_ con cartas de mayor valor gana
+
+  12. _Trío empate_
+      **Dado** dos manos de 5 cartas\
+      **Cuando** 1 mano es _trío_\
+      **Y** la otra es _trío_\
+      **Y** son de igual valor\
+      **Entonces** no hay ganador
+
 ## 7. Test Doubles
 
 - ¿Qué son los test doubles?
@@ -257,4 +336,5 @@ Ver implementación en Java
 
 ## Links
 
-- [Mockito](https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/Mockito.html)
+- [Documentación Mockito](https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/Mockito.html)
+- [Documentación Mockito Annotations](https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/MockitoAnnotations.html)
