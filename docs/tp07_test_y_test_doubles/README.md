@@ -156,6 +156,8 @@ Ver implementación en Java
 
 ## 6. Jugadas de Póquer
 
+![Jugadas de Póquer](uml-06-jugadas-de-poquer.png)
+
 - Escenarios:
 
   1. _Poker gana a Color_
