@@ -85,11 +85,13 @@
 
 ## 4. Cartas de Póquer
 
-Ver implementación en Java
+![Cartas de Póquer](uml-04-cartas-de-poker.png)
+
+- Ver implementación Java.
 
 ## 5. Mockito
 
-- Ver implementación en Java
+- Ver implementación Java.
 
 - ¿Cómo se indica en mockito que el objeto mock debe recibir un secuencia de mensajes particular en un orden preestablecido?
 
@@ -160,75 +162,75 @@ Ver implementación en Java
 
 - Escenarios:
 
-  1. _Poker gana a Color_
+  1. _Poker gana a Color_\
      **Dado** dos manos de 5 cartas\
      **Cuando** 1 mano es _poker_\
      **Y** la otra es _color_\
      **Entonces** la mano identificada como _poker_ gana
 
-  2. _Poker gana a Trío_
+  2. _Poker gana a Trío_\
      **Dado** dos manos de 5 cartas\
      **Cuando** 1 mano es _poker_\
      **Y** la otra es _trío_\
      **Entonces** la mano identificada como _poker_ gana
 
-  3. _Poker con cartas de mayor valor gana a Poker con cartas de menor valor_
+  3. _Poker con cartas de mayor valor gana a Poker con cartas de menor valor_\
      **Dado** dos manos de 5 cartas\
      **Cuando** 1 mano es _poker_\
      **Y** la otra es _poker_\
      **Entonces** la mano identificada como _poker_ con cartas de mayor valor gana
 
-  4. _Poker empate_
+  4. _Poker empate_\
      **Dado** dos manos de 5 cartas\
      **Cuando** 1 mano es _poker_\
      **Y** la otra es _poker_\
      **Y** son de igual valor\
      **Entonces** no hay ganador
 
-  5. _Color pierde contra Poker_
+  5. _Color pierde contra Poker_\
      **Dado** dos manos de 5 cartas\
      **Cuando** 1 mano es _color_\
      **Y** la otra es _poker_\
      **Entonces** la mano identificada como _color_ pierde
 
-  6. _Color le gana a Trío_
+  6. _Color le gana a Trío_\
      **Dado** dos manos de 5 cartas\
      **Cuando** 1 mano es _color_\
      **Y** la otra es _trío_\
      **Entonces** la mano identificada como _color_ gana
 
-  7. _Color con cartas de mayor valor le gana a Color con cartas de menor valor_
+  7. _Color con cartas de mayor valor le gana a Color con cartas de menor valor_\
      **Dado** dos manos de 5 cartas\
      **Cuando** 1 mano es _color_\
      **Y** la otra es _color_\
      **Entonces** la mano identificada como _color_ con cartas de mayor valor gana
 
-  8. _Color empate_
+  8. _Color empate_\
      **Dado** dos manos de 5 cartas\
      **Cuando** 1 mano es _color_\
      **Y** la otra es _color_\
      **Y** son de igual valor\
      **Entonces** no hay ganador
 
-  9. _Trío pierde contra Poker_
+  9. _Trío pierde contra Poker_\
      **Dado** dos manos de 5 cartas\
      **Cuando** 1 mano es _trío_\
      **Y** la otra es _poker_\
      **Entonces** la mano identificada como _trío_ pierde
 
-  10. _Trío pierde contra Color_
+  10. _Trío pierde contra Color_\
       **Dado** dos manos de 5 cartas\
       **Cuando** 1 mano es _trío_\
       **Y** la otra es _color_\
       **Entonces** la mano identificada como _trío_ pierde
 
-  11. _Trío con cartas de mayor valor le gana a Trío con cartas de menor valor_
+  11. _Trío con cartas de mayor valor le gana a Trío con cartas de menor valor_\
       **Dado** dos manos de 5 cartas\
       **Cuando** 1 mano es _trío_\
       **Y** la otra es _trío_\
       **Entonces** la mano identificada como _trío_ con cartas de mayor valor gana
 
-  12. _Trío empate_
+  12. _Trío empate_\
       **Dado** dos manos de 5 cartas\
       **Cuando** 1 mano es _trío_\
       **Y** la otra es _trío_\
