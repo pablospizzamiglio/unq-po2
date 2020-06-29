@@ -233,6 +233,10 @@ Ver implementación en Java
       **Y** son de igual valor\
       **Entonces** no hay ganador
 
+- Se utilizaron test doubles del tipo stub para poder facilitarle las entradas indirectas a los objetos que así lo necesitaran.
+
+- Ver implementación.
+
 ## 7. Test Doubles
 
 - ¿Qué son los test doubles?
