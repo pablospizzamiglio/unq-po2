@@ -7,7 +7,7 @@
 - [ ] TP04 - Clases Abstractas e Interfaces (_incompleto_)
 - [ ] TP05 - SOLID (_incompleto_)
 - [x] [TP06 - Template Method y Adapter](docs/tp06_template_method_y_adapter/README.md)
-- [x] TP07 - Test y Test Doubles
+- [x] [TP07 - Test y Test Doubles](docs/tp07_test_y_test_doubles/README.md)
 - [ ] TP08 - Composite
 - [ ] TP08 - Observer
 - [ ] TP09 - State y Strategy
