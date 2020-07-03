@@ -31,7 +31,8 @@ public class ShapeshifterGroup implements IShapeshifter {
 	@Override
 	public int deepest() {
 		return this.getShapeshifters().stream()
-				.mapToInt(s -> s.deepest()).max()
+				.mapToInt(s -> s.deepest())
+				.max()
 				.getAsInt() + 1;
 	}
 
