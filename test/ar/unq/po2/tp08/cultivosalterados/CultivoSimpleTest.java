@@ -5,9 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import ar.unq.po2.tp08.cultivosalterados.Cultivo;
-import ar.unq.po2.tp08.cultivosalterados.CultivoSimple;
-
 class CultivoSimpleTest {
 	
 	private Cultivo soja;
