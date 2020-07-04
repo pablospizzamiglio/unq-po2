@@ -30,8 +30,7 @@ public class CriterioCompuesto implements Criterio {
 	@Override
 	public Boolean esDeInteres(Articulo articulo) {
 		return this.getCriterios().stream()
-				.map(c -> c.esDeInteres(articulo))
-				.reduce(Boolean.FALSE, Boolean::logicalOr);
+				.anyMatch(c -> c.esDeInteres(articulo));
 	}
 
 }
