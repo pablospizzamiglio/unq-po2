@@ -68,19 +68,22 @@ class SistemaTest {
 		when(this.aspectoB.verificar(any(EventoDeportivo.class))).thenReturn(false);
 		this.sistema.suscribir(this.suscriptorA, this.aspectoA);
 		this.sistema.suscribir(this.suscriptorB, this.aspectoB);
+		System.out.println(this.sistema.getSuscripciones());
 		// exercise
 		this.sistema.agregarEventoDeportivo(this.eventoDeportivo);
 		// verify		
-		InOrder inOrder = inOrder(
+		InOrder inOrderA = inOrder(
 			this.aspectoA,
-			this.suscriptorA, 
+			this.suscriptorA
+		);
+		InOrder inOrderB = inOrder(
 			this.aspectoB,
 			this.suscriptorB
 		);
-		inOrder.verify(this.aspectoA, times(1)).verificar(this.eventoDeportivo);
-		inOrder.verify(this.suscriptorA, times(1)).recibirEventoDeportivo(this.eventoDeportivo);
-		inOrder.verify(this.aspectoB, times(1)).verificar(this.eventoDeportivo);
-		inOrder.verify(this.suscriptorB, never()).recibirEventoDeportivo(this.eventoDeportivo);
+		inOrderA.verify(this.aspectoA, times(1)).verificar(this.eventoDeportivo);
+		inOrderA.verify(this.suscriptorA, times(1)).recibirEventoDeportivo(this.eventoDeportivo);
+		inOrderB.verify(this.aspectoB, times(1)).verificar(this.eventoDeportivo);
+		inOrderB.verify(this.suscriptorB, never()).recibirEventoDeportivo(this.eventoDeportivo);
 		assertEquals(1, this.sistema.getEventosDeportivos().size());
 	}
 

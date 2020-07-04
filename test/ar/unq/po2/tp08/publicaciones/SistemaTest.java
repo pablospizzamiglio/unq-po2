@@ -70,16 +70,18 @@ class SistemaTest {
 		// exercise
 		this.sistema.agregarArticulo(this.articulo);
 		// verify		
-		InOrder inOrder = inOrder(
+		InOrder inOrderA = inOrder(
 			this.criterioA,
-			this.suscriptorA, 
+			this.suscriptorA
+		);
+		InOrder inOrderB = inOrder(
 			this.criterioB,
 			this.suscriptorB
 		);
-		inOrder.verify(this.criterioA, times(1)).esDeInteres(this.articulo);
-		inOrder.verify(this.suscriptorA, times(1)).actualizar(this.articulo);
-		inOrder.verify(this.criterioB, times(1)).esDeInteres(this.articulo);
-		inOrder.verify(this.suscriptorB, never()).actualizar(this.articulo);
+		inOrderA.verify(this.criterioA, times(1)).esDeInteres(this.articulo);
+		inOrderA.verify(this.suscriptorA, times(1)).actualizar(this.articulo);
+		inOrderB.verify(this.criterioB, times(1)).esDeInteres(this.articulo);
+		inOrderB.verify(this.suscriptorB, never()).actualizar(this.articulo);
 		assertEquals(1, this.sistema.getArticulos().size());
 	}
 
