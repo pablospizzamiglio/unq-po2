@@ -10,5 +10,5 @@
 - [x] [TP07 - Test y Test Doubles](docs/tp07_test_y_test_doubles/README.md)
 - [x] [TP08 - Composite](docs/tp08_composite/README.md)
 - [x] [TP08 - Observer](docs/tp08_observer/README.md)
-- [ ] TP09 - State y Strategy
+- [ ] [TP09 - State y Strategy](docs/tp09_state_y_strategy/README.md)
 - [ ] TP10 - Refactoring
