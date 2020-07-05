@@ -9,6 +9,6 @@
 - [x] [TP06 - Template Method y Adapter](docs/tp06_template_method_y_adapter/README.md)
 - [x] [TP07 - Test y Test Doubles](docs/tp07_test_y_test_doubles/README.md)
 - [x] [TP08 - Composite](docs/tp08_composite/README.md)
-- [ ] [TP08 - Observer](docs/tp08_observer/README.md)
+- [x] [TP08 - Observer](docs/tp08_observer/README.md)
 - [ ] TP09 - State y Strategy
 - [ ] TP10 - Refactoring
