@@ -1,6 +1,6 @@
 # TP01 - Repaso y Entrada en Calor
 
-## 1. Evaluación de protocolos de una clase
+## 1. Evaluación de Protocolos de una Clase
 
 Opción #2 ya que se mantiene el estado interno encapsulado, en cambio, con la opción #1 puede lograrse un estado interno inconsistente.
 
@@ -18,7 +18,7 @@ Opción #2 ya que el **Jefe** contiene una referencia al **Secretario**, por end
 
 - Opción #4:
 
-## Actividad de lectura #1
+## 4. Actividad de Lectura 1
 
 1. El **acceso directo** a las variables es utilizar las variables de instancia cuando se las necesite sin un intermediario como lo son los _getters_ y _setters_.
    Por ejemplo: `unaBrujula.orientacion = 'Norte'`
@@ -28,14 +28,14 @@ Opción #2 ya que el **Jefe** contiene una referencia al **Secretario**, por end
 
 3. El **acceso directo** facilita la lectura de código pero rompe el encapsulamiento del estado de un objeto al permitir que agentes externos modifiquen el valor de las variables de instancia. En cambio, el **acceso indirecto** a las variables nos permite controlar la forma de tomar o editar el valor de una variable manteniendo intacto el encapsulamiento pero nos obliga a mantener el protocolo de mensajes una vez implementado.
 
-## Actividad de lectura #2
+## 5. Actividad de Lectura 2
 
 El **creation paramether method** conviene usarse cuando es necesario realizar inicialización explícita, es decir, cuando la inicialización es parte de la creación de una instancia nueva.
 
-## Actividad de lectura #3
+## 6. Actividad de Lectura 3
 
 Las collecciones deben accederse indirectamente e implementando uno o varios **collection accessor methods** para proporcionar acceso seguro a los elementos de una colleción y así evitar que agentes externos afecten el contenido de la misma.
 
-## Actividad de lectura #4
+## 7. Actividad de Lectura 4
 
 Son necesarios dos métodos para cambiar el estado de una propiedad booleana para encapsular la representación del estado de dicha variable. Además incrementa la comunicación del código resultante.
