@@ -153,7 +153,7 @@ class JuegoTest {
 		// exercise
 		this.juego.recibirSolucionEnunciado(this.participante1, "Pregunta1", "Solucion1");
 		// verify
-		assertEquals("La partida finalizó o usted no es un participante válido", this.consolaFalsa.toString().trim());
+		assertEquals("La partida no inició, ya finalizó o usted no es un participante válido", this.consolaFalsa.toString().trim());
 		verify(this.participante1, never()).recibirNotificacionValidezSolucion(anyString(), anyBoolean());
 	}
 	
@@ -213,7 +213,7 @@ class JuegoTest {
 		// exercise
 		this.juego.recibirSolucionEnunciado(this.participante1, "Pregunta1", "Solucion1");
 		// verify
-		assertEquals("La partida finalizó o usted no es un participante válido", this.consolaFalsa.toString().trim());
+		assertEquals("La partida no inició, ya finalizó o usted no es un participante válido", this.consolaFalsa.toString().trim());
 		verify(this.participante1, times(5)).recibirNotificacionValidezSolucion(anyString(), anyBoolean());
 		verify(this.participante1, times(1)).recibirNotificacionGanador("Participante1");
 		verify(this.participante2, times(1)).recibirNotificacionGanador("Participante1");
