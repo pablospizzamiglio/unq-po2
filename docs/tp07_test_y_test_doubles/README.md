@@ -303,7 +303,7 @@
     verify(spyDocumento).getContenido();
     ```
 
-  - Un _Mock Object_ es un objeto que también puede actuar como punto de observación de las salidas indirectas del SUT. Al igual que un Test Stub, puede necesitar retornar información como respuesta al llamado de sus métodos (respuestas pre-programadas). Y al igual que un Test Spy, registra todas las llamadas hechas a sus métodos por el SUT para luego verificarse.
+  - Un _Mock Object_ es un objeto que también puede actuar como punto de observación de las salidas indirectas del SUT. Al igual que un Test Stub, puede necesitar retornar información como respuesta al llamado de sus métodos (respuestas pre-programadas). Y al igual que un Test Spy, registra todas las llamadas hechas a sus métodos por el SUT para luego verificarlas.
 
     - El siguiente ejemplo demuestra cómo pueden alterarse las entradas indirectas y verificarse las salidas indirectas del SUT mediante el uso de Mockito:
 
