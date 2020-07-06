@@ -10,5 +10,5 @@
 
 - Bad smells:
 
-  - Comments: `RegistroAutomotor::debeRealizarVtv` sufre de éste _bad smell_ al tener una lógica de negocio difícil de comprender la cual forzó al programador original a escribir un comentario para que la próxima persona en leerlo pueda entender qué acción realiza el fragmento de código comentado. Esto puede solucionarse aplicando el refactoring _Extract Method_ y aplicándole un nombre descriptivo a el o los métodos método extraidos.
+  - Comments: `RegistroAutomotor::debeRealizarVtv` sufre de éste _bad smell_ al tener una lógica de negocio difícil de comprender la cual forzó al programador original a escribir un comentario para que la próxima persona en leerlo pueda entender qué acción realiza el fragmento de código comentado. Esto puede solucionarse aplicando el refactoring _Extract Method_ y aplicándole un nombre descriptivo a él o los métodos extraídos.
   - Feature Envy: `RegistroAutomotor::debeRealizarVtv` solicita varios atributos de la clase `Vehiculo`. Esto es un indicio de que cierta funcionalidad o funcionalidades deberían estar localizadas en la clase a la cual se le piden tantos detalles. Este _bad smell_ puede solucionarse aplicando el refactoring _Move Function_ para reubicar la o las funcionalidades "envidiosa".
