@@ -1,25 +1,16 @@
 package ar.unq.po2.tp08.publicaciones;
 
-public class CriterioLugarPublicacion implements Criterio {
+public class CriterioLugarPublicacion extends CriterioValor {
 
-	private String lugarPublicacion;
-	
 	public CriterioLugarPublicacion(String lugarPublicacion) {
-		this.setLugarPublicacion(lugarPublicacion);
-	}
-
-	private String getLugarPublicacion() {
-		return lugarPublicacion;
-	}
-
-	private void setLugarPublicacion(String lugarPublicacion) {
-		this.lugarPublicacion = lugarPublicacion;
+		super(lugarPublicacion);
 	}
 
 	@Override
-	public Boolean esDeInteres(Articulo articulo) {
-		return this.getLugarPublicacion().equalsIgnoreCase(articulo.getLugarPublicacion());
+	protected String getAtributoDeInteres(Articulo articulo) {
+		return articulo.getLugarPublicacion();
 	}
+
 
 }
 

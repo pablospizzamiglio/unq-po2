@@ -1,28 +1,16 @@
 package ar.unq.po2.tp08.publicaciones;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class CriterioAutor implements Criterio {
+public class CriterioAutor extends CriterioListaValor {
 	
-	private List<String> autores;
-
 	public CriterioAutor(List<String> autores) {
-		this.setAutores(autores);
-	}
-
-	private List<String> getAutores() {
-		return autores;
-	}
-
-	private void setAutores(List<String> autores) {
-		this.autores = autores;
+		super(autores);
 	}
 
 	@Override
-	public Boolean esDeInteres(Articulo articulo) {
-		List<String> autoresInteresantes = new ArrayList<String>(this.getAutores());
-		return autoresInteresantes.retainAll(articulo.getAutores());
+	protected List<String> getAtributoDeInteres(Articulo articulo) {
+		return articulo.getAutores();
 	}
 
 }
