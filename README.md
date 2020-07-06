@@ -11,4 +11,4 @@
 - [x] [TP08 - Composite](docs/tp08_composite/README.md)
 - [x] [TP08 - Observer](docs/tp08_observer/README.md)
 - [x] [TP09 - State y Strategy](docs/tp09_state_y_strategy/README.md)
-- [ ] [TP10 - Refactoring](docs/tp10_refactoring/README.md)
+- [x] [TP10 - Refactoring](docs/tp10_refactoring/README.md)
