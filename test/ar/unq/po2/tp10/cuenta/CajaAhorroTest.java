@@ -16,11 +16,11 @@ public class CajaAhorroTest {
 		
 		cajaAhorro.extraer(90);
 		assertEquals(10, cajaAhorro.getSaldo());
-		Mockito.verify(historialMovimientos).registrarMovimiento("ExtracciÃ³n", 90);
+		Mockito.verify(historialMovimientos).registrarMovimiento("Extracción", 90);
 		
 		cajaAhorro.extraer(10);
 		assertEquals(0, cajaAhorro.getSaldo());
-		Mockito.verify(historialMovimientos).registrarMovimiento("ExtracciÃ³n", 10);
+		Mockito.verify(historialMovimientos).registrarMovimiento("Extracción", 10);
 		
 		cajaAhorro.extraer(1);
 		assertEquals(0, cajaAhorro.getSaldo());
@@ -28,4 +28,5 @@ public class CajaAhorroTest {
 		
 		Mockito.verify(notificador, Mockito.times(2)).notificarNuevoSaldoACliente(cajaAhorro);
 	}
+	
 }
