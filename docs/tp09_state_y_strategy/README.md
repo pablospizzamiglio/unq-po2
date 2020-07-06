@@ -11,3 +11,9 @@
 ![Videojuego](uml-02-videojuego.png)
 
 - Ver implementación Java.
+
+## 3. Reproductor MP3
+
+![Reproductor MP3](uml-03-reproductor.png)
+
+- Ver implementación Java.
